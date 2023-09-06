@@ -138,6 +138,8 @@ NET_REDUCED="${pivpnNET::-2}"
   echo '[Interface]'
   echo "PrivateKey = $(cat "keys/${CLIENT_NAME}_priv")"
   echo -n "Address = 10.9.0.${COUNT}/${subnetClass}"
+  echo 
+  echo "Table = off"
 
   # if [[ "${pivpnenableipv6}" == 1 ]]; then
   #   echo ",${pivpnNETv6}${COUNT}/${subnetClassv6}"
@@ -159,8 +161,7 @@ NET_REDUCED="${pivpnNET::-2}"
   echo "PresharedKey = $(cat "keys/${CLIENT_NAME}_psk")"
   echo "Endpoint = ${pivpnHOST}:${pivpnPORT}"
   echo "AllowedIPs = 0.0.0.0/0"
-  echo "Table = off"
-
+  
   if [[ -n "${pivpnPERSISTENTKEEPALIVE}" ]]; then
     echo "PersistentKeepalive = ${pivpnPERSISTENTKEEPALIVE}"
   fi
