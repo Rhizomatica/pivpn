@@ -140,6 +140,8 @@ NET_REDUCED="${pivpnNET::-2}"
   echo -n "Address = 10.9.0.${COUNT}/${subnetClass}"
   echo 
   echo "Table = off"
+  echo
+  echo "PersistentKeepalive = 25"
 
   # if [[ "${pivpnenableipv6}" == 1 ]]; then
   #   echo ",${pivpnNETv6}${COUNT}/${subnetClassv6}"
